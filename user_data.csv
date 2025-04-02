@@ -1,0 +1,17 @@
+user_id,group,correct_rate,time_taken
+user_001,control,0.0,0.0
+user_001,control,0.0,0.0
+user_001,control,0.0,0.0
+user_001,control,0.0,0.0
+user_001,control,0.0,0.0,鸟
+user_001,control,0.0,0.0,双眼
+user_001,control,0.0,0.0,兔子
+user_001,control,0.0,0.0,日落
+user_001,experiment,0.0,0.0,活跃
+user_001,experiment,0.0,0.0,双眼
+user_001,experiment,0.0,0.0,兔子
+user_001,experiment,0.0,0.0,日落
+user_001,experiment,0.0,0.0,活跃
+user_001,experiment,0.0,0.0,小鸟
+user_001,experiment,0.0,0.0,豹子
+user_001,experiment,0.0,0.0,双眼

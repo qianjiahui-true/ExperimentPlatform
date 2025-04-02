@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>字谜任务</title>
+    </head>
+    <body>
+        <h1>字谜题目</h1>
+        <p>{{ question['question'] }}</p>
+    
+        <form method="POST" action="{{ url_for('task') }}">
+            <label for="answer">你的答案：</label>
+            <input type="text" id="answer" name="answer" required>
+            <input type="hidden" name="correct_rate" value="0">
+            <input type="hidden" name="time_taken" value="0">
+            <button type="submit">提交答案</button>
+        </form>
+    
+        {% if error_message %}
+            <p id="error_message" data-next="{{ next_question_index }}">{{ error_message }}</p>
+        {% endif %}
+    
+        <p>Next question index: {{ next_question_index }}</p>
+
+        <!-- <script>
+            window.onload = function() {
+                var errorMessage = document.getElementById('error_message');
+                if (errorMessage) {
+                    setTimeout(function() {
+                        // 使用正确的方式将 next_question_index 插入到 JavaScript 中
+                        var nextIndex = {{ next_question_index | tojson }};
+                        console.log("Next question index:", nextIndex); // 在控制台打印查看
+                        window.location.href = "/task"; 
+                        // 检查 nextIndex 是否是数字
+                        if (typeof nextIndex === "number") {
+                            window.location.href = "/task"; 
+                        } 
+                        else {
+                            console.error("Next question index is not a valid number:", nextIndex);
+                        }
+                    }, 1500);
+                }
+            };
+        </script>-->
+
+<!--<script>
+    window.onload = function() {
+        var errorMessage = document.getElementById('error_message');
+        if (errorMessage) {
+            setTimeout(function() {
+                // 确保 next_question_index 是一个合法的值
+                var nextIndex = {{ next_question_index | tojson }};
+                if (nextIndex !== undefined) {
+                    console.log("Next question index:", nextIndex);
+                    window.location.href = "/task";
+                } else {
+                    console.error("next_question_index is undefined");
+                }
+            }, 1500);
+        }
+    };
+</script> -->
+
+<script>
+    window.onload = function() {
+        var errorMessage = document.getElementById('error_message');
+        if (errorMessage) {
+            setTimeout(function() {
+                // 确保 next_question_index 是一个合法的值
+                var nextIndex = errorMessage.getAttribute("data-next");
+
+               if (nextIndex !== null && nextIndex !== "") {
+                            nextIndex = parseInt(nextIndex); // 转换为整数
+                            console.log("Next question index:", nextIndex);
+
+                            if (!isNaN(nextIndex)) {
+                                window.location.href = "/task"; // 跳转到任务页面
+                            } else {
+                                console.error("Error: next_question_index is not a valid number");
+                            }
+                        } else {
+                            console.error("Error: next_question_index is undefined or empty");
+                        }
+                    }, 1500); // 1.5秒后跳转
+        }
+    };
+</script> 
+        
+       
+
+    </body>    
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实验平台首页</title>
+</head>
+<body>
+    <h1>欢迎参加字谜实验！</h1>  <!-- 页面主标题，欢迎用户参加实验 -->
+    <p>你被分配到：{{ group }} 组</p>  <!-- 显示用户被分配到的组别（控制组或实验组） -->
+    <a href="{{ url_for('task') }}">开始任务</a>  <!-- 一个链接，点击后跳转到任务页面（`task` 路由） -->
+</body>
+</html>

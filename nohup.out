@@ -1,0 +1,39 @@
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://10.36.16.251:5001/ (Press CTRL+C to quit)
+10.36.16.251 - - [16/Mar/2025 17:29:48] "GET / HTTP/1.1" 200 -
+10.36.16.251 - - [16/Mar/2025 17:29:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.36.16.251 - - [16/Mar/2025 18:19:22] "GET / HTTP/1.1" 200 -
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+Traceback (most recent call last):
+  File "/Users/qianjiahui/Desktop/ExperimentPlatform/app.py", line 133, in <module>
+    app.run(host='0.0.0.0', port=5001)
+  File "/Users/qianjiahui/Desktop/ExperimentPlatform/venv/lib/python3.12/site-packages/flask/app.py", line 922, in run
+    run_simple(t.cast(str, host), port, self, **options)
+  File "/Users/qianjiahui/Desktop/ExperimentPlatform/venv/lib/python3.12/site-packages/werkzeug/serving.py", line 1008, in run_simple
+    inner()
+  File "/Users/qianjiahui/Desktop/ExperimentPlatform/venv/lib/python3.12/site-packages/werkzeug/serving.py", line 948, in inner
+    srv = make_server(
+          ^^^^^^^^^^^^
+  File "/Users/qianjiahui/Desktop/ExperimentPlatform/venv/lib/python3.12/site-packages/werkzeug/serving.py", line 780, in make_server
+    return ThreadedWSGIServer(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/qianjiahui/Desktop/ExperimentPlatform/venv/lib/python3.12/site-packages/werkzeug/serving.py", line 686, in __init__
+    super().__init__(server_address, handler)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/opt/anaconda3/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/opt/anaconda3/lib/python3.12/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 48] Address already in use
