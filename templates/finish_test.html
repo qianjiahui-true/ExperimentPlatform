@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习结束</title>
+</head>
+<body>
+    <h1>您已经完成了所有练习题，现在可以开始正式实验。</h1>
+
+    <form action="{{ url_for('task') }}">
+        <button type="submit">开始正式实验</button>
+    </form>
+</body>
+</html>

@@ -4,6 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>字谜任务</title>
+        <script>
+            function redirectToNextQuestion(){
+                setTimeout(function(){
+                        window.location.href = "/next_question";
+                }, 1500);
+                }
+        </script>
     </head>
     <body>
         <h1>字谜题目</h1>
@@ -23,15 +30,12 @@
     
         <p>Next question index: {{ next_question_index }}</p>
 
-        <!-- <script>
+         <script>
             window.onload = function() {
                 var errorMessage = document.getElementById('error_message');
                 if (errorMessage) {
                     setTimeout(function() {
-                        // 使用正确的方式将 next_question_index 插入到 JavaScript 中
-                        var nextIndex = {{ next_question_index | tojson }};
-                        console.log("Next question index:", nextIndex); // 在控制台打印查看
-                        window.location.href = "/task"; 
+                        window.location.href = "/next_question"; 
                         // 检查 nextIndex 是否是数字
                         if (typeof nextIndex === "number") {
                             window.location.href = "/task"; 
@@ -42,7 +46,7 @@
                     }, 1500);
                 }
             };
-        </script>-->
+        </script>
 
 <!--<script>
     window.onload = function() {
@@ -62,7 +66,7 @@
     };
 </script> -->
 
-<script>
+<!--<script>
     window.onload = function() {
         var errorMessage = document.getElementById('error_message');
         if (errorMessage) {
@@ -85,7 +89,7 @@
                     }, 1500); // 1.5秒后跳转
         }
     };
-</script> 
+</script>-->
         
        
 

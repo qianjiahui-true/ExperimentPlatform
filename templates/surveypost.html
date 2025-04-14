@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Survey</title>
+</head>
+<body>
+    <h1>感谢您的参与！请回答以下问题：</h1>
+
+    <form action="{{ url_for('surveypost') }}" method="post">
+        <h2>1. 您是否注意到字谜的难度根据您的答题情况而有所变化？</h2>
+        <label for="difficulty_perception">1 - 完全不同意, 7 - 完全同意</label><br>
+        <input type="radio" name="difficulty_perception" value="1"> 1
+        <input type="radio" name="difficulty_perception" value="2"> 2
+        <input type="radio" name="difficulty_perception" value="3"> 3
+        <input type="radio" name="difficulty_perception" value="4"> 4
+        <input type="radio" name="difficulty_perception" value="5"> 5
+        <input type="radio" name="difficulty_perception" value="6"> 6
+        <input type="radio" name="difficulty_perception" value="7"> 7
+        <br><br>
+
+        <h2>2. 您认为自己在完成任务时，比其他组的表现更好吗？</h2>
+        <label for="performance_comparison">1 - 完全不同意, 7 - 完全同意</label><br>
+        <input type="radio" name="performance_comparison" value="1"> 1
+        <input type="radio" name="performance_comparison" value="2"> 2
+        <input type="radio" name="performance_comparison" value="3"> 3
+        <input type="radio" name="performance_comparison" value="4"> 4
+        <input type="radio" name="performance_comparison" value="5"> 5
+        <input type="radio" name="performance_comparison" value="6"> 6
+        <input type="radio" name="performance_comparison" value="7"> 7
+        <br><br>
+
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

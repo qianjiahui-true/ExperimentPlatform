@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中文联想任务练习</title>
+</head>
+<body>
+    亲爱的同学，感谢您参与本次联想任务实验！
+
+在这个实验中，您将需要通过三个没有关系的汉字，找到一个能与它们都组合成真实词语的目标汉字。每个题目会给出三个汉字，您的任务是根据这三个汉字找到一个可以组合成三个有意义词组的答案。
+
+例如，给定“菜”、“包”、“烧”这三个汉字，您需要想出一个汉字，例如“香”能够与这三个词一起组成像“香菜”、“香包”和“烧香”这样的词组。
+
+每个题目有时间限制，通常是20秒或30秒，请在时间内作答。
+
+<strong>异音词提醒</strong>： 请注意，某些题目会包含“异音词”，这些词有可能有多个发音或者多个意思。在遇到这种情况时，请考虑每个词的不同发音或意思，看看能否找到符合题意的答案。例如，“乐”字在“乐观”和“音乐”中的发音和意义不同，您需要特别注意这一点。
+
+在实验正式开始前，您会先完成以下两道练习题，帮助您更好适应任务以及增加对实验的理解。
+<p><strong>题目：</strong>{{ question }}</p>  <!-- 显示当前题目 -->
+
+<!-- 用户输入答案的表单 -->
+<form method="POST" action="{{ url_for('tasktest') }}">
+    <label for="answer">请输入答案：</label>
+    <input type="text" id="answer" name="answer" required>
+    <button type="submit">提交答案</button>
+</form>
+    <!-- 显示反馈信息 -->
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+
+    <!-- 若所有题目完成后，显示“开始正式实验”按钮 -->
+    {% if session['current_question_index'] >= 2 %}
+        <form action="{{ url_for('finish_test') }}">
+            <button type="submit">继续</button>
+        </form>
+    {% endif %}
+</body>
+</html>
