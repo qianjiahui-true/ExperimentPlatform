@@ -149,7 +149,7 @@ def tasktest():
             error_message = "回答正确！"
             session['current_question_index'] += 1  # 正确答案，跳到下一题
              # 等待1.5秒后跳转到下一个题目
-        time.sleep(1.5)
+            time.sleep(1.5)
 
     return render_template('tasktest.html', question=current_question['question'], error_message=error_message)
 

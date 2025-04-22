@@ -78,7 +78,7 @@
      <p>
      阅读完知情同意书后，如果您仍选择参与本研究，您可以选择“<strong>同意</strong>”。如果您不同意继续参与本研究，您可以选择“<strong>不同意</strong>”退出研究。
      </p>
-    <form method="POST" action="{{ url_for('tasktest') }}">
+    <form method="POST" action="{{ url_for('handle_consent') }}">
         <button type="submit" name="consent" value="agree">同意</button>
         <button type="submit" name="consent" value="disagree">不同意</button>
     </form>
