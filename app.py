@@ -111,6 +111,25 @@ def index():
     session['current_question_index'] = 0  # 从第一个问题开始
     return render_template('index.html', group=session['group'])
 
+@app.route('/population', methods=['GET', 'POST'])
+def population():
+    if request.method == 'POST':
+        # 获取表单数据
+        gender = request.form['gender']
+        age = request.form['age']
+        school = request.form['school']
+
+        # 将数据存储到会话中
+        session['gender'] = gender
+        session['age'] = age
+        session['school'] = school
+
+        # 提交后跳转到期望问卷页面
+        return redirect(url_for('surveypre'))
+
+    # 如果是GET请求，展示页面
+    return render_template('population.html')
+
 # 处理用户点击同意或不同意的操作
 @app.route('/handle_consent', methods=['POST'])
 def handle_consent():

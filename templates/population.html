@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人口统计</title>
+</head>
+<body>
+    <h1>人口统计</h1>
+
+    <form method="POST" action="{{ url_for('population') }}">
+        <div>
+            <label for="gender">您的性别是：</label>
+            <select name="gender" id="gender" required>
+                <option value="male">男性</option>
+                <option value="female">女性</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="age">您的年龄是：</label>
+            <select name="age" id="age" required>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="25_plus">25及以上</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="school">请问您来自哪所学校：</label>
+            <input type="text" name="school" id="school" required>
+        </div>
+
+        <div>
+            <button type="submit">提交</button>
+        </div>
+    </form>
+</body>
+</html>
